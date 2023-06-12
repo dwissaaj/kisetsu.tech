@@ -4,6 +4,7 @@ import React, {Fragment} from "react";
 import Link from "next/link";
 import {Disclosure, Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon} from "@heroicons/react/20/solid";
+import Foots from "@/app/component/foots";
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
@@ -12,7 +13,7 @@ export default function Navi() {
     return (
     <>
       <nav>
-          <div className={'p-2 lg:p-4 border-b grid grid-cols-1 md:grid-cols-3 flex justify-center justify-items-center items-center bg-black'}>
+          <div className={'static p-2 lg:p-4 border-b grid grid-cols-1 md:grid-cols-3 flex justify-center justify-items-center items-center bg-black'}>
               <div className={'hidden md:block'}>
                   <Link className={'text-teal-500 font-4xl font-bold'} href={'/'}>KISETSU</Link>
               </div>
@@ -100,12 +101,14 @@ export default function Navi() {
                   </Disclosure>
               </div>
               <div className={'hidden md:block'}>
-                  <Link href={'https://github.com/dwissaaj'}>
                       <Image className={'bg-white rounded-md hover:bg-teal-500'} src={'/image/GitHub.png'} alt={'github logo'} width={100} height={100} />
-                  </Link>
               </div>
           </div>
       </nav>
+      {/*<div className={'fixed bottom-0 mt-4'}>*/}
+      {/*    <Foots />*/}
+      {/*</div>*/}
+
     </>
     )
 }
