@@ -5,26 +5,29 @@ import Link from "next/link";
 import {Disclosure, Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon} from "@heroicons/react/20/solid";
 import Foots from "@/app/component/foots";
-function classNames(...classes) {
+import {usePathname} from "next/navigation";
+function classNames(...classes: any[]) {
     return classes.filter(Boolean).join(' ')
 }
 
 export default function Navi() {
+    const pathname = usePathname()
+
     return (
     <>
       <nav>
-          <div className={'static p-2 lg:p-4 border-b grid grid-cols-1 md:grid-cols-3 flex justify-center justify-items-center items-center bg-black'}>
+          <div className={'static p-2 lg:p-4 border-b border-neutral-900 grid grid-cols-1 md:grid-cols-3 justify-center justify-items-center items-center bg-neutral-800 shadow-lg shadow-neutral-900'}>
               <div className={'hidden md:block'}>
                   <Link className={'text-teal-500 font-4xl font-bold'} href={'/'}>KISETSU</Link>
               </div>
               <div className={'flex gap-4 lg:gap-8'}>
                   <Disclosure>
-                  <Link className={'hover:text-[#FD8A8A]'}  href={'/'} >Home</Link>
-                  <Link className={'hover:text-[#FD8A8A]'} href={'/blog'}>Blog</Link>
-                  <Link className={'hover:text-[#FD8A8A]'} href={'/career'} >Career</Link>
+                  <Link className={pathname === '/' ? 'hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'hover:text-pink-500 '}  href={'/'} >Home</Link>
+                  <Link className={pathname === '/blog' ? 'hover:text-pink-500 bg-neutral-700 text-gray-500 px-2  rounded-md' : 'hover:text-pink-500 '} href={'/blog'}>Blog</Link>
+                  <Link className={pathname === '/career' ? 'hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'hover:text-pink-500 '} href={'/career'}>Career</Link>
                   <Menu as="div" className="relative inline-block text-left">
                       <Menu.Button className="flex items-center">
-                          <p>Data</p>
+                          <p className={'hover:text-pink-500'}>Data</p>
                           <ChevronDownIcon
                               className="ml-2 -mr-1 h-5 w-5 text-violet-200 hover:text-violet-100"
                               aria-hidden="true"
@@ -101,13 +104,15 @@ export default function Navi() {
                   </Disclosure>
               </div>
               <div className={'hidden md:block'}>
-                      <Image className={'bg-white rounded-md hover:bg-teal-500'} src={'/image/GitHub.png'} alt={'github logo'} width={100} height={100} />
+                  <Link href={'https://github.com/dwissaaj'} >
+                      <Image className={'bg-white rounded-md hover:bg-teal-500'} src={'/image/GitHub.png'} alt={'github logo'} width={75} height={75} />
+                  </Link>
               </div>
           </div>
       </nav>
-      {/*<div className={'fixed bottom-0 mt-4'}>*/}
-      {/*    <Foots />*/}
-      {/*</div>*/}
+      <footer className={'absolute bottom-0 '}>
+          <Foots />
+      </footer>
 
     </>
     )
