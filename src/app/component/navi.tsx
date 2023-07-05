@@ -59,7 +59,7 @@ export default function Navi() {
                               <Menu.Item>
                                   {({ active }) => (
                                       <Link
-                                          href={'/umkm'}
+                                          href={'https://public.tableau.com/app/profile/dwi.setyo.aji'}
                                           className={classNames(
                                               active ? 'bg-[#FD8A8A] text-gray-900' : 'text-gray-700',
                                               'block px-4 py-2 text-sm'
@@ -72,7 +72,7 @@ export default function Navi() {
                               <Menu.Item>
                                   {({ active }) => (
                                       <Link
-                                          href={'/umkm'}
+                                          href={'https://drive.google.com/file/d/1Kgyd9CT55lCdLJrsRgvY8GZqVB12-Ewh/view?usp=drive_link'}
                                           className={classNames(
                                               active ? 'bg-[#FD8A8A] text-gray-900' : 'text-gray-700',
                                               'block px-4 py-2 text-sm'
@@ -85,7 +85,7 @@ export default function Navi() {
                               <Menu.Item>
                                   {({ active }) => (
                                       <Link
-                                          href={'/umkm'}
+                                          href={'https://docs.google.com/spreadsheets/d/1EIFTOB16fVdaWIMFQNBc1-zjeqLu7ojd/edit?usp=sharing&ouid=100367702123448522266&rtpof=true&sd=true'}
                                           className={classNames(
                                               active ? 'bg-[#FD8A8A] text-gray-900' : 'text-gray-700',
                                               'block px-4 py-2 text-sm'
