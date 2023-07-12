@@ -2,13 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .text-home {
+    @apply text-xl lg:text-5xl font-bold;
+  }
+  .swiper-custom {
+    @apply cursor-move transition ease-in-out delay-150 duration-300
+  }
+  .swiper-custom:hover {
+    @apply cursor-move  -translate-y-3
+  }
+  .snap-children {
+    @apply snap-start h-full text-xl md:text-2xl lg:text-5xl font-extrabold text-center
+  }
+  .background-animation {
+    @apply absolute blur-xl opacity-50 rounded-full
+  }
+}
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
-    display: none;
+    display: block;
   }
   .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: auto;  /* IE and Edge */
+    scrollbar-width: auto;  /* Firefox */
   }
   .scrollbar::-webkit-scrollbar {
     display: grid;
@@ -18,19 +35,40 @@
 
   .scrollbar::-webkit-scrollbar-track {
     border-radius: 100vh;
-    background: #000000;
+    background: #262626;
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    background: #e0cbcb;
+    background: #262626;
     border-radius: 100vh;
-    border: 3px solid #f6f7ed;
+    border: 3px solid #fffec4;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #c0a0b9;
+    background: #116a7b;
   }
 
+
+  .scrollbar-2::-webkit-scrollbar {
+    display: grid;
+    height: 5px;
+    margin: 20px;
+  }
+
+  .scrollbar-2::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #262626;
+  }
+
+  .scrollbar-2::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 100vh;
+    border: 3px solid #f24c3d;
+  }
+
+  .scrollbar-2::-webkit-scrollbar-thumb:hover {
+    background: #22a699;
+  }
 }
 @media (prefers-color-scheme: dark) {
   :root {

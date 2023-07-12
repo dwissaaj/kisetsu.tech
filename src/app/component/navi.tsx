@@ -104,15 +104,12 @@ export default function Navi() {
                   </Disclosure>
               </div>
               <div className={'hidden md:block'}>
-                  <Link href={'https://github.com/dwissaaj'} >
-                      <Image className={'bg-white rounded-md hover:bg-teal-500'} src={'/image/GitHub.png'} alt={'github logo'} width={75} height={75} />
-                  </Link>
+                    <button disabled={true} className={'mx-2 border rounded-md bg-teal-400 p-1'}>Sign Up</button>
+                  <button disabled={true} className={'mx-2 border rounded-md bg-neutral-600 p-1'}>Login</button>
               </div>
           </div>
       </nav>
-      <footer className={'absolute bottom-0 '}>
-          <Foots />
-      </footer>
+
 
     </>
     )
