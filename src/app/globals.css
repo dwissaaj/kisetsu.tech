@@ -6,6 +6,9 @@
   .text-home {
     @apply text-xl lg:text-5xl font-bold;
   }
+  .text-code {
+    @apply text-xl md:text-2xl lg:text-4xl
+  }
   .swiper-custom {
     @apply cursor-move transition ease-in-out delay-150 duration-300
   }
@@ -82,3 +85,5 @@ body {
   background-color: #100f11;
   color: white;
 }
+
+

@@ -5,6 +5,9 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extend: {
       backgroundImage: {
@@ -14,7 +17,7 @@ module.exports = {
       },
       animation: {
         loopLtr: 'loopLtr 7s infinite',
-        loopRtl: 'loopRtl 7s infinite'
+        loopRtl: 'loopRtl 7s infinite',
       },
 
       keyframes: {
@@ -44,8 +47,9 @@ module.exports = {
           },
           "100%" : {
             transform: 'translate(0px,0px) '
-          }
-        }
+          },
+        },
+
       }
     },
   },
