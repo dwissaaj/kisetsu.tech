@@ -8,6 +8,7 @@ import Blog from "@/app/blog/page";
 import Home from "@/app/page";
 import Foots from "@/app/component/foots";
 import Social from "@/app/component/home/Social";
+import Development from "@/app/component/home/Development";
 
 const ComponentPreviews = () => {
     return (
@@ -32,6 +33,9 @@ const ComponentPreviews = () => {
             </ComponentPreview>
             <ComponentPreview path="/Social">
                 <Social/>
+            </ComponentPreview>
+            <ComponentPreview path="/Development">
+                <Development/>
             </ComponentPreview>
         </Previews>
     );
