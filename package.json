@@ -24,6 +24,7 @@
     "eslint-config-next": "13.4.4",
     "json-server": "^0.17.3",
     "next": "13.4.4",
+    "nextjs-google-analytics": "^2.3.3",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
