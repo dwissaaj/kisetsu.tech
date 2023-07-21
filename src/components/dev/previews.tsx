@@ -9,6 +9,7 @@ import Home from "@/app/page";
 import Foots from "@/app/component/foots";
 import Social from "@/app/component/home/Social";
 import Development from "@/app/component/home/Development";
+import DataAnalyst from "@/app/component/home/DataAnalyst";
 
 const ComponentPreviews = () => {
     return (
@@ -36,6 +37,9 @@ const ComponentPreviews = () => {
             </ComponentPreview>
             <ComponentPreview path="/Development">
                 <Development/>
+            </ComponentPreview>
+            <ComponentPreview path="/DataAnalyst">
+                <DataAnalyst/>
             </ComponentPreview>
         </Previews>
     );

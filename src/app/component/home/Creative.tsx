@@ -7,8 +7,9 @@ const vt323 = VT323({weight: ['400'], subsets: ['latin']});
 export default function Creative() {
     return (
         <div className={'container mx-auto'}>
+            <h1 className={`my-4 text-center text-2xl md:text-4xl lg:text-6xl ${vt323.className}`}>Creative <span className={'text-fuchsia-500'}>Industry</span></h1>
             <div className={'bg-neutral-800 h-full m-4 p-4 border-y-8 border-rose-700 rounded-md'}>
-                <h1 className={`my-4 text-center text-2xl md:text-4xl lg:text-6xl ${vt323.className}`}>Creative <span className={'text-fuchsia-500'}>Industry</span></h1>
+
                 <div className={'grid grid-cols-1 content-center justify-items-center gap-4'}>
                     <div className={'w-full'}>
                         <Swiper

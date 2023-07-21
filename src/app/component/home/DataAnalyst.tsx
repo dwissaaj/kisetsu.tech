@@ -8,8 +8,9 @@ const vt323 = VT323({weight: "400", subsets: ['latin']})
 export default function DataAnalyst() {
     return (
         <div className={'container mx-auto'}>
+            <h1 className={`my-4 text-center text-2xl md:text-4xl lg:text-6xl ${vt323.className}`}>Data  <span className={'text-amber-500'}>Industry</span></h1>
             <div className={'bg-neutral-800 m-4  p-4 border-y-8 border-[#90A17D] rounded-md grid grid-cols-1 md:grid-cols-2 gap-2'}>
-                <h1 className={`my-4 text-center text-2xl md:text-4xl lg:text-6xl ${vt323.className}`}>Data  <span className={'text-teal-500'}>Industry</span></h1>
+
                 <div className={'snap-y snap-mandatory h-full cursor-help overflow-y-scroll scrollbar-2  space-y-16 py-6'}>
                     <div className={`snap-children relative flex justify-center h-full w-full py-4 ${spaceMono.className}`}>
                         <h1 className={'absolute inset-0 z-10 mt-6'}>MICROSOFT <span className={'snap-children text-emerald-500'}>EXCEL</span></h1>

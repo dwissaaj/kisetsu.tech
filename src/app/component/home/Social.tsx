@@ -7,8 +7,9 @@ const vt323 = VT323({weight: "400", subsets: ['latin']})
 export default function Social() {
     return (
         <div className={'container mx-auto'}>
+            <h1 className={`my-4 text-center text-2xl md:text-4xl lg:text-6xl ${vt323.className}`}>Communication  <span className={'text-sky-500'}>Science</span></h1>
             <div className={'bg-neutral-800 m-4  p-4 border-y-8 border-[#FFE1E1] rounded-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2'}>
-                <h1 className={`my-4 text-center text-2xl md:text-4xl lg:text-6xl ${vt323.className}`}>Communication  <span className={'text-sky-500'}>Science</span></h1>
+
                 <div>
                     <Swiper className={'swiper-custom'} spaceBetween={10} slidesPerView={1}
                             autoplay={{
