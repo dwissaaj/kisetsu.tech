@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Blog() {
   return (
-      <div className={`flex justify-center w-screen mt-8 `}>
-        <div className={'grid justify-items-center p-6 bg-neutral-800 rounded-md '}>
+      <div className={`flex justify-center w-screen my-4 `}>
+        <div className={'grid justify-items-center p-6 bg-neutral-800 rounded-md h-screen'}>
           <div>
             <p>There is no post
               <span className={'text-red-500 uppercase border-b ml-2'}>to read
