@@ -14,7 +14,6 @@ export default function Home() {
     return (
         <>
             <GoogleAnalytics trackPageViews  />
-
             <div className={`container mx-auto ${poppins.className}`}>
                 <div className={' flex flex-col w-full justify-center '}>
                     <Social/>

@@ -1,10 +1,8 @@
 'use client'
-import Image from "next/image";
 import React, {Fragment} from "react";
 import Link from "next/link";
 import {Disclosure, Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon} from "@heroicons/react/20/solid";
-import Foots from "@/app/component/foots";
 import {usePathname} from "next/navigation";
 function classNames(...classes: any[]) {
     return classes.filter(Boolean).join(' ')
@@ -104,8 +102,7 @@ export default function Navi() {
                   </Disclosure>
               </div>
               <div className={'hidden md:block'}>
-                    <button disabled={true} className={'mx-2 border rounded-md bg-teal-400 p-1'}>Sign Up</button>
-                  <button disabled={true} className={'mx-2 border rounded-md bg-neutral-600 p-1'}>Login</button>
+                  <Link href={'/dashboard'}  className={'p-2 border border-teal-500 rounded-md hover:bg-pink-500'}>Account</Link>
               </div>
           </div>
       </nav>
