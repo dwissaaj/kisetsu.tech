@@ -1,19 +1,21 @@
-import {getServerSession} from "next-auth";
+import {getServerSession, Session} from "next-auth";
 import {options} from "@/app/options";
 import {redirect} from "next/navigation";
-import User from "@/app/component/user";
 import {Poppins, Press_Start_2P} from "next/font/google";
-import {sessions} from "@/app/dashboard/type";
 const poppins = Poppins({weight: "300", subsets: ['latin']})
+import Image from "next/image";
+import UserC from "@/app/component/userC";
+import React from "react";
+
+
 const pressStart2P = Press_Start_2P({weight: "400", subsets: ['latin']})
 export default async function Account(): Promise<JSX.Element> {
-    const session: sessions | null = await getServerSession(options);
+    const session = await getServerSession(options);
 
 
     if (!session) {
         redirect('/login');
     }
-
     return (
        <>
               <div className={'container mx-auto'}>
@@ -21,7 +23,9 @@ export default async function Account(): Promise<JSX.Element> {
                       <div>
                           <div className={'grid justify-items-center'}>
                               <h1 className={`${pressStart2P.className}`}>My name is</h1>
-                              <User user={session.user} />
+                              <div className={'flex gap-2 justify-center items-center'}>
+                                  <UserC name={session?.user?.name as string} imageUrl={session?.user?.image as string} />
+                              </div>
                           </div>
                       </div>
                   </div>

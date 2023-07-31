@@ -35,7 +35,7 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model User {
+model CardUsername {
   id            String    @id @default(cuid())
   name          String?
   email         String?   @unique

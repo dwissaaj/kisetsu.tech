@@ -22,13 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-      <Navi />
       <NextAuthProvider>
+      <Navi />
 
-          {children}
 
-      </NextAuthProvider>
+              {children}
+
+
       <Foots />
+      </NextAuthProvider>
       </body>
     </html>
   )
