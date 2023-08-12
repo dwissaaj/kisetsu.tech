@@ -2,8 +2,9 @@ import './globals.css'
 import { Roboto } from 'next/font/google'
 import Navi from "@/app/component/navi";
 import Foots from "@/app/component/foots";
-import {ReactNode} from "react";
+import {ReactNode, Suspense} from "react";
 import {NextAuthProvider} from "@/app/provider/NextAuthProvider";
+import Loading from "@/app/loading";
 const roboto = Roboto({ subsets: ['latin'], weight: ['300','500','700'] })
 
 export const metadata = {
@@ -22,15 +23,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-      <NextAuthProvider>
-      <Navi />
+      <Suspense fallback={<Loading />}>
+          <NextAuthProvider>
+              <Navi />
 
 
               {children}
 
 
-      <Foots />
-      </NextAuthProvider>
+              <Foots />
+          </NextAuthProvider>
+      </Suspense>
       </body>
     </html>
   )

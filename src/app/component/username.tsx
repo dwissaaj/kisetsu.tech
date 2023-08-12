@@ -8,7 +8,7 @@ export default function Username() {
         return <p>Get your data</p>
     }
     if (status == 'unauthenticated') {
-        return <p className={'p-2 lg:text-2xl border rounded-md border-teal-500'}>Login</p>
+        return <Link href={'/login'} className={'p-2 lg:text-2xl border rounded-md border-teal-500'}>Login</Link>
     }
     return (
         <div>

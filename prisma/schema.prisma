@@ -1,12 +1,12 @@
 generator client {
-  provider = "client-client-js"
+  provider = "prisma-client-js"
 }
+
 
 datasource db {
   provider          = "postgresql"
-  url               = env("POSTGRES_PRISMA_URL")
-  directUrl         = env("POSTGRES_URL_NON_POOLING")
-  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
+  url               = env("DATABASE_URL")
+  directUrl         = env("DIRECT_URL")
 }
 
 model Account {
@@ -35,7 +35,7 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model CardUsername {
+model User {
   id            String    @id @default(cuid())
   name          String?
   email         String?   @unique
@@ -64,7 +64,9 @@ model Post {
   authorId  String
   tag       String[]
   comments  Comment?
-  author    User     @relation(fields: [authorId], references: [id])
+  image_header String
+  image_content String
+  author    User     @relation(fields: [authorId], references: [email])
 }
 
 model Comment {

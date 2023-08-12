@@ -1,9 +1,8 @@
 import {NextAuthOptions} from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import {PrismaAdapter} from "@next-auth/prisma-adapter";
-import {PrismaClient} from "@prisma/client"
-import {prisma} from "../../lib/prisma";
-
+import {prisma} from '../../db/prisma'
+// use `prisma` in your application to read and write data in your DB
 export const options: NextAuthOptions = {
     providers: [
         GoogleProvider({
