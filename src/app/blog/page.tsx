@@ -7,7 +7,6 @@ export default function Blog() {
           <div>
             <p>There is no post
               <span className={'text-red-500 uppercase border-b ml-2'}>to read
-
                 </span></p>
           </div>
           <div>
