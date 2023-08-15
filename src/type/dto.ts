@@ -1,4 +1,5 @@
 export type Post = {
+    writer: String;
     title    : String
     content   :String
     tag       :String[]

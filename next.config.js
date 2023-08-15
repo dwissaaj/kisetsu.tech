@@ -8,7 +8,7 @@ const nextConfig = {
 
             },
         ],
-        domains: ['res.cloudinary.com'],
+        domains: ['res.cloudinary.com', 'xgddmaybsftuiidgvjys.supabase.co'],
     },
 }
 

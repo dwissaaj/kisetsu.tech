@@ -8,7 +8,7 @@ export default function Add() {
 
     const onSubmit: SubmitHandler <Post> = async (data)  => {
 
-        const { title, content, tag, published, author, image_content, image_header} = data
+        const { title, content, tag, published, author, image_content, image_header, writer} = data
 
         try {
 
@@ -19,7 +19,7 @@ export default function Add() {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        title,content, tag, author, image_content, image_header, published
+                        title,content, tag, author, image_content, image_header, published, writer
                     })
                 })
             const result = await res.json()
@@ -50,6 +50,10 @@ export default function Add() {
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'author'}>author</label>
                         <input {...register("author")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                    </div>
+                    <div className={'flex flex-col gap-2 text-neutral-900'}>
+                        <label htmlFor={'writer'}>writer</label>
+                        <input {...register("writer")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'image_content'}>image_content</label>
