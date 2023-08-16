@@ -22,7 +22,6 @@ export default function Add() {
                         title,content, tag, author, image_content, image_header, published, writer
                     })
                 })
-            const result = await res.json()
             toast.success("Success Publish !", {
                 position: toast.POSITION.BOTTOM_CENTER, theme: "dark",  icon: "🚀"
             });

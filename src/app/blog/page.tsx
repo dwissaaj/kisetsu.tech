@@ -4,13 +4,13 @@ import {Post} from "@/type/dto";
 import Image from "next/image";
 import Link from "next/link";
 import Loading from "@/app/blog/loading";
+import CardBlog from "@/app/blog/card";
+
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 export default function Blog() {
 
-    const { data, error, isLoading } = useSWR('http://localhost:3000/api/blog', fetcher)
-
-
-    if (error) return <p>wrong error</p>
+    const { data, error, isLoading } = useSWR('/api/blog', fetcher)
+    if (error) return <p>something wrong</p>
     if (isLoading) return <Loading />
   return (
       <>
@@ -20,20 +20,8 @@ export default function Blog() {
                       {
                           data?.post?.map((posts: Post) => {
                               return (
-                                  <div className={'p-4 border rounded-md border-teal-500 space-y-2 group  hover:bg-rose-900 transition duration-300 ease-in-out hover:outline-dotted hover:outline-2 hover:outline-offset-4 hover:outline-purple-500'} key={posts.title as string}>
-                                      <div>
-                                          <Image className="rounded-md object-cover object-top" src={`${posts.image_header}`} alt={`${posts.title}`} height={400} width={400} />
-                                      </div>
-                                      <div className={'capitalize '}>
-                                          <p className={''}>{posts.title}</p>
-                                          <p className={''}>{posts.writer} </p>
-                                      </div>
-                                      <div>
-                                          <Link className={'hover:border-b-2 hover:border-blue-300'} href={`/blog/${posts.title}`}>
-                                              <button >Read more...</button>
-                                          </Link>
-                                      </div>
-                                  </div>
+                                  <CardBlog key={posts.id as string} id={posts.id} writer={posts.writer} title={posts.title} content={posts.content} tag={posts.tag}
+                                            author={posts.author} image_header={posts.image_header} image_content={posts.image_content} published={posts.published} />
                               )
                           })
                       }

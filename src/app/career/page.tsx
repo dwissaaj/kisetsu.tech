@@ -1,10 +1,14 @@
 import Image from "next/image";
 import {Press_Start_2P, Space_Mono} from "next/font/google";
 import {dataCareer} from "@/app/career/careerdata"
+import {Metadata} from "next";
 
 const space = Space_Mono({weight: "400", subsets: ['latin']})
 const tekstur = Press_Start_2P({weight: "400", subsets: ['latin']})
-
+export const metadata: Metadata = {
+    title: 'Kisetsu Career',
+    description: 'My Skill Dwi Setyo Aji kisetsu',
+}
 export default function Career() {
     return (
         <div className={'container mx-auto'}>
