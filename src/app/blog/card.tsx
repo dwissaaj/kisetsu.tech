@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import {Post} from "@/type/dto";
@@ -14,8 +15,8 @@ export default function CardBlog(props: Post) {
                     <p className={''}>{props.writer} </p>
                 </div>
                 <div>
-                    <Link className={'hover:border-b-2 hover:border-blue-300'} href={`/blog/${props.title}`}>
-                        <button >Read more...</button>
+                    <Link className={'hover:border-b-2 hover:border-blue-300'} href={`/blog/${props.title.replace("%20","-")}`}>
+                       Read more...
                     </Link>
                 </div>
             </div>

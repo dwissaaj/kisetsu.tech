@@ -1,8 +1,6 @@
 'use client'
 import useSWR from "swr";
 import {Post} from "@/type/dto";
-import Image from "next/image";
-import Link from "next/link";
 import Loading from "@/app/blog/loading";
 import CardBlog from "@/app/blog/card";
 

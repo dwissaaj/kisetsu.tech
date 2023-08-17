@@ -1,6 +1,6 @@
 import {Noto_Serif} from "next/font/google";
 const noto = Noto_Serif({weight: ['400'], subsets: ['latin']})
-export default function DashboardLayout({
+export default function BlogsLayout({
                                             children,
                                         }: {
     children: React.ReactNode
