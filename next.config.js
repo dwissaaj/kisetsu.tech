@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
     images: {
-        domains: ['res.cloudinary.com'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'lh3.googleusercontent.com',
+
+            },
+        ],
+        domains: ['res.cloudinary.com', 'xgddmaybsftuiidgvjys.supabase.co'],
     },
 }
 

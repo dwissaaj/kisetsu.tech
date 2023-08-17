@@ -1,19 +1,31 @@
-import Image from "next/image";
+'use client'
+import useSWR from "swr";
+import {Post} from "@/type/dto";
+import Loading from "@/app/blog/loading";
+import CardBlog from "@/app/blog/card";
 
+const fetcher = (url: string) => fetch(url).then(r => r.json())
 export default function Blog() {
-  return (
-      <div className={`flex justify-center w-screen my-4 `}>
-        <div className={'grid justify-items-center p-6 bg-neutral-800 rounded-md h-screen'}>
-          <div>
-            <p>There is no post
-              <span className={'text-red-500 uppercase border-b ml-2'}>to read
 
-                </span></p>
+    const { data, error, isLoading } = useSWR('/api/blog', fetcher)
+    if (error) return <p>something wrong</p>
+    if (isLoading) return <Loading />
+  return (
+      <>
+          <div className={'container mx-auto'}>
+              <div className={'bg-neutral-700 p-2 m-2'}>
+                  <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3'}>
+                      {
+                          data?.post?.map((posts: Post) => {
+                              return (
+                                  <CardBlog key={posts.id as string} id={posts.id} writer={posts.writer} title={posts.title} content={posts.content} tag={posts.tag}
+                                            author={posts.author} image_header={posts.image_header} image_content={posts.image_content} published={posts.published} />
+                              )
+                          })
+                      }
+                  </div>
+              </div>
           </div>
-          <div>
-            <Image src={'/image/gif/saku-fight.gif'} alt={'saku fight'} width={200} height={200} />
-          </div>
-        </div>
-      </div>
+      </>
   )
 }
