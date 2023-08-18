@@ -3,7 +3,7 @@ import useSWR from "swr";
 import {Post} from "@/type/dto";
 import Loading from "@/app/blog/loading";
 import CardBlog from "@/app/blog/card";
-
+import Blogpost from "./blogpost.mdx"
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 export default function Blog() {
 
@@ -18,8 +18,7 @@ export default function Blog() {
                       {
                           data?.post?.map((posts: Post) => {
                               return (
-                                  <CardBlog key={posts.id as string} id={posts.id} writer={posts.writer} title={posts.title} content={posts.content} tag={posts.tag}
-                                            author={posts.author} image_header={posts.image_header} image_content={posts.image_content} published={posts.published} />
+                                   <CardBlog key={posts.id as number} id={posts.id as number} title={posts.title as string} image_header={posts.image_header as string} writer={posts.writer as string} />
                               )
                           })
                       }

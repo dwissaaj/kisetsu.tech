@@ -10,6 +10,11 @@ const nextConfig = {
         ],
         domains: ['res.cloudinary.com', 'xgddmaybsftuiidgvjys.supabase.co'],
     },
-}
+    experimental: {
+        mdxRs: true,
+    },
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx']
 
-module.exports = nextConfig
+}
+const withMDX = require('@next/mdx')()
+module.exports = withMDX(nextConfig)

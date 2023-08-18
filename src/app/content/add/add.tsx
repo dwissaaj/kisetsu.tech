@@ -8,7 +8,10 @@ export default function Add() {
 
     const onSubmit: SubmitHandler <Post> = async (data)  => {
 
-        const { title, content, tag, published, author, image_content, image_header, writer} = data
+        const { title, content, tag, published,
+            author, image_content, image_header,
+            writer,
+        description} = data
 
         try {
 
@@ -19,7 +22,7 @@ export default function Add() {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        title,content, tag, author, image_content, image_header, published, writer
+                        title,content, tag, author, image_content, image_header, published, writer,description
                     })
                 })
             toast.success("Success Publish !", {
@@ -36,31 +39,35 @@ export default function Add() {
 
     return (
         <>
-            <div>
+            <div className={'w-full h-full'}>
                 <form className={'flex flex-col gap-2'} onSubmit={handleSubmit(onSubmit)}>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'title'}>Title</label>
-                        <input {...register("title")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                        <input  {...register("title")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
-                    <div className={'flex flex-col gap-2 text-neutral-900'}>
+                    <div className={'flex flex-col gap-2 text-neutral-900 '}>
                         <label htmlFor={'Content'}>Content</label>
-                        <textarea {...register("content")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'}/>
+                        <textarea {...register("content")} className={'rounded-md h-[300px]'}/>
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'author'}>author</label>
-                        <input {...register("author")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                        <input  {...register("author")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'writer'}>writer</label>
-                        <input {...register("writer")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                        <input  {...register("writer")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'image_content'}>image_content</label>
-                        <input {...register("image_content")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                        <input  {...register("image_content")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'image_header'}>image_header</label>
-                        <input {...register("image_header")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                        <input  {...register("image_header")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                    </div>
+                    <div className={'flex flex-col gap-2 text-neutral-900'}>
+                        <label htmlFor={'description'}>description</label>
+                        <input  {...register("description")} className={'rounded-md h-[200px]'} />
                     </div>
                     <div className={''}>
                         <div>
@@ -132,8 +139,12 @@ export default function Add() {
                 </form>
             </div>
             <div>
+
+            </div>
+            <div>
                 <ToastContainer />
             </div>
+
         </>
     )
 }

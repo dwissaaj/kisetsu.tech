@@ -26,6 +26,7 @@ export async function POST(request: Request) {
                 writer: json.writer as string,
                 image_content: json.image_content as string,
                 published: json.published as boolean,
+                description: json.description as string,
                 author: {
                     connect: {email: json.author as string}
                 }
