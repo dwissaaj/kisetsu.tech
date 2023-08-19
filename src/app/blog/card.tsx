@@ -4,20 +4,20 @@ import Link from "next/link";
 import {Post} from "@/type/dto";
 import slugify from "slugify";
 type CardPost = {
-    id: number,
+    id: string,
     title: string,
     image_header: string,
     writer: string,
-    key: Number
+    key: string
 }
 export default function CardBlog(props: CardPost) {
     const slugify = require('slugify')
     let slugUrl = slugify(props.title, {replacement : '-'})
     return (
         <>
-            <div key={props.id} className={'p-4 border rounded-md border-teal-500 space-y-2 group  hover:bg-rose-900 transition duration-300 ease-in-out hover:outline-dotted hover:outline-2 hover:outline-offset-4 hover:outline-teal-700'} >
+            <div key={props.id} className={'p-4 border rounded-md border-teal-500 space-y-2 group  hover:bg-rose-500 transition duration-300 ease-in-out hover:outline-dotted hover:outline-2 hover:outline-offset-4 hover:outline-teal-700 hover:-translate-y-2'} >
                 <div>
-                    <Image className="rounded-md object-cover object-top" src={`${props.image_header}`} alt={`${props.title}`} height={400} width={400} />
+                    <Image className="rounded-md object-cover object-top" src={`${props.image_header}`} alt={`${props.title}`} height={300} width={300} />
                 </div>
                 <div className={'capitalize '}>
                     <p className={''}>{props.title}</p>

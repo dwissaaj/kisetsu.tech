@@ -3,6 +3,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {Post} from "@/type/dto";
 import {toast, ToastContainer} from "react-toastify";
 import {redirect} from "next/navigation";
+import axios, {AxiosError} from "axios";
 
 export default function Add() {
     const { register, handleSubmit,getValues } = useForm<Post>()
@@ -13,7 +14,6 @@ export default function Add() {
             writer,
         description} = data
         try {
-
             const res = await fetch('http://localhost:3000/api/content',
                 {
                     method: 'POST',
@@ -34,7 +34,8 @@ export default function Add() {
         catch (e) {
             toast.error(`${e}`, {
                 position: toast.POSITION.BOTTOM_CENTER, theme: "dark",icon: "🚩"
-            });
+            })
+
         }
 
     };
@@ -131,6 +132,26 @@ export default function Add() {
                         <div>
                             <label htmlFor="Next js">Next</label>
                             <input id={'Next js'} type={'checkbox'} {...register("tag")} value={'Next js'}/>
+                        </div>
+                        <div>
+                            <label htmlFor="Sakamichi">Sakamichi</label>
+                            <input id={'Sakamichi'} type={'checkbox'} {...register("tag")} value={'Sakamichi'}/>
+                        </div>
+                        <div>
+                            <label htmlFor="Nogizaka46">Nogizaka46</label>
+                            <input id={'Nogizaka46'} type={'checkbox'} {...register("tag")} value={'Nogizaka46'}/>
+                        </div>
+                        <div>
+                            <label htmlFor="Sakurazaka46">Sakurazaka46</label>
+                            <input id={'Sakurazaka46'} type={'checkbox'} {...register("tag")} value={'Sakurazaka46'}/>
+                        </div>
+                        <div>
+                            <label htmlFor="Hinatazaka46">Hinatazaka46</label>
+                            <input id={'Hinatazaka46'} type={'checkbox'} {...register("tag")} value={'Hinatazaka46'}/>
+                        </div>
+                        <div>
+                            <label htmlFor="Japan">Japan</label>
+                            <input id={'Japan'} type={'checkbox'} {...register("tag")} value={'Japan'}/>
                         </div>
                         <div>
                             <label htmlFor="published">Published</label>

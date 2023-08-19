@@ -7,7 +7,7 @@ export default function Loading() {
         <>
             <div className={'flex justify-center items-center'}>
                 <div className={''}>
-                    <h1 className={`text-center text-xl lg:text-5xl ${vt323.className}`}>Hold on a second........</h1>
+                    <h1 className={`text-center text-xl lg:text-5xl ${vt323.className}`}>Hold on a second........💖</h1>
                     <Image className={'rounded-md'} src={'/image/gif/murai yu.gif'} alt={'murai yu'} width={500} height={500}/>
                 </div>
             </div>
