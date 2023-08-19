@@ -3,7 +3,6 @@ import useSWR from "swr";
 import {Post} from "@/type/dto";
 import Loading from "@/app/blog/loading";
 import CardBlog from "@/app/blog/card";
-import Blogpost from "./blogpost.mdx"
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 export default function Blog() {
 

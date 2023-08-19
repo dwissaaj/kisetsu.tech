@@ -2,17 +2,16 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Post} from "@/type/dto";
 import {toast, ToastContainer} from "react-toastify";
+import {redirect} from "next/navigation";
 
 export default function Add() {
-    const { register, handleSubmit} = useForm<Post>()
+    const { register, handleSubmit,getValues } = useForm<Post>()
 
-    const onSubmit: SubmitHandler <Post> = async (data)  => {
-
-        const { title, content, tag, published,
+    const onSubmit: SubmitHandler<Post> = async (data)  => {
+        let { title, content, tag, published,
             author, image_content, image_header,
             writer,
         description} = data
-
         try {
 
             const res = await fetch('http://localhost:3000/api/content',
@@ -25,9 +24,12 @@ export default function Add() {
                         title,content, tag, author, image_content, image_header, published, writer,description
                     })
                 })
-            toast.success("Success Publish !", {
-                position: toast.POSITION.BOTTOM_CENTER, theme: "dark",  icon: "🚀"
-            });
+            if(res.status === 200) {
+                toast.success("Success Publish !", {
+                    position: toast.POSITION.BOTTOM_CENTER, theme: "dark",  icon: "🚀"
+                });
+            }
+
         }
         catch (e) {
             toast.error(`${e}`, {
@@ -43,31 +45,31 @@ export default function Add() {
                 <form className={'flex flex-col gap-2'} onSubmit={handleSubmit(onSubmit)}>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'title'}>Title</label>
-                        <input  {...register("title")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                        <input  id={'title'}  {...register("title")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900 '}>
-                        <label htmlFor={'Content'}>Content</label>
-                        <textarea {...register("content")} className={'rounded-md h-[300px]'}/>
+                        <label htmlFor={'content'}>Content</label>
+                        <textarea id={'content'} {...register("content")} className={'rounded-md h-[300px]'}/>
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'author'}>author</label>
-                        <input  {...register("author")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                        <input id={'author'}  {...register("author")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'writer'}>writer</label>
-                        <input  {...register("writer")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                        <input id={'writer'}  {...register("writer")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'image_content'}>image_content</label>
-                        <input  {...register("image_content")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                        <input  id={'image_content'} {...register("image_content")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'image_header'}>image_header</label>
-                        <input  {...register("image_header")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                        <input id={'image_header'}  {...register("image_header")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'description'}>description</label>
-                        <input  {...register("description")} className={'rounded-md h-[200px]'} />
+                        <input id={'description'}  {...register("description")} className={'rounded-md h-[200px]'} />
                     </div>
                     <div className={''}>
                         <div>

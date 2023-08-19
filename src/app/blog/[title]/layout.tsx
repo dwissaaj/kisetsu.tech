@@ -1,6 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import {getData} from "@/app/blog/[title]/page";
+import React from "react";
 
 export async function generateMetadata({ params: { title } }: {params: { title: string,}}) {
     const data = await getData(title)
@@ -16,7 +17,7 @@ export async function generateMetadata({ params: { title } }: {params: { title: 
         title: `K-News: ${final}`,
         description: `${data.post.description}`,
         keywords: [`${data.post.tag}`],
-        author: `${data.post.writer}`,
+        authors: [{name: `${data.post.writer}`}, {name: 'Dwi Aji', url:'https://kisetsu.tech/'}],
         creator: `${data.post.writer}`,
         publisher: 'Kisetsu Tech'
 

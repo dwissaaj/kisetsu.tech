@@ -43,3 +43,6 @@ db.json
 #docker
 compose.yaml
 Dockerfile
+
+#file
+file

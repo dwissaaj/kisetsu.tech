@@ -1,14 +1,16 @@
 'use client'
 import useSWR from "swr";
 import {Post} from "@/type/dto";
-import Image from "next/image";
 import Link from "next/link";
+
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 export default function Content( ) {
 
     const { data, error, isLoading } = useSWR('http://localhost:3000/api/content', fetcher)
 
-    if (error) return <div>failed to load</div>
+    if (error) {
+        return <div>failed to load</div>
+    }
     if (isLoading) return <div>loading...</div>
 
     return (
@@ -20,11 +22,10 @@ export default function Content( ) {
                             data?.post?.map((posts: Post) => {
                                 return (
                                     <div className={'p-2 border border-teal-500 '} key={posts.title as string}>
-                                        <Image className="object-cover" src={`${posts.image_header}`} alt={`${posts.title}`} height={100} width={100} />
                                         <p>{posts.title}</p>
                                         <p>{posts.author}</p>
-
-                                        <Link className={'border border-red-500 p-2'} href={`/content/${data.id}`}>
+                                        <p>{posts.createdAt}</p>
+                                        <Link className={'border border-red-500 p-2'} href={`/content/${posts.id}`}>
                                             <button >Edit</button>
                                         </Link>
                                     </div>

@@ -1,6 +1,7 @@
 import {NextResponse} from "next/server";
 import {Post} from "@/type/dto";
 import {prisma} from "../../../../db/prisma";
+import {redirect} from "next/navigation";
 
 export async function GET(request: Request){
     try {
@@ -33,11 +34,9 @@ export async function POST(request: Request) {
 
             }
         })
-
-        return NextResponse.json({ post })
+        return NextResponse.json({ message: "Success", status: 200 })
 
     } catch (e) {
-        console.log(e)
         return NextResponse.json({e})
     }
 }
