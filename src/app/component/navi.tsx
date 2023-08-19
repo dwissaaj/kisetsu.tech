@@ -108,7 +108,19 @@ export default async function Navi() {
                                             )}
                                         </Menu.Item>
 
-
+                                        <Menu.Item>
+                                            {({active}) => (
+                                                <Link
+                                                    href={'https://sakamichi.online/members'}
+                                                    className={classNames(
+                                                        active ? 'bg-[#FD8A8A] text-gray-900' : 'text-gray-700',
+                                                        'block px-4 py-2 text-sm'
+                                                    )}
+                                                >
+                                                    Sakamichi Fan Site
+                                                </Link>
+                                            )}
+                                        </Menu.Item>
                                     </Menu.Items>
                                 </Transition>
 

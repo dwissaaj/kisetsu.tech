@@ -2,6 +2,7 @@ import {NextResponse} from "next/server";
 import {Post} from "@/type/dto";
 import {prisma} from "../../../../db/prisma";
 import {redirect} from "next/navigation";
+import {AxiosError} from "axios";
 
 export async function GET(request: Request){
     try {
@@ -34,9 +35,11 @@ export async function POST(request: Request) {
 
             }
         })
-        return NextResponse.json({ message: "Success", status: 200 })
+        console.log(post)
+
 
     } catch (e) {
-        return NextResponse.json({e})
+        const error = e as AxiosError;
+        return NextResponse.json({ message: error.message, status: error.status })
     }
 }

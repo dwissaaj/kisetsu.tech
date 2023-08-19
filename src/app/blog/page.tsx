@@ -17,7 +17,7 @@ export default function Blog() {
                       {
                           data?.post?.map((posts: Post) => {
                               return (
-                                   <CardBlog key={posts.id as number} id={posts.id as number} title={posts.title as string} image_header={posts.image_header as string} writer={posts.writer as string} />
+                                   <CardBlog key={posts.id as string} id={posts.id as string} title={posts.title as string} image_header={posts.image_header as string} writer={posts.writer as string} />
                               )
                           })
                       }
