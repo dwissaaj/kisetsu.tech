@@ -3,6 +3,7 @@
 import {getData} from "@/app/blog/[title]/page";
 import React from "react";
 import {Inconsolata} from "next/font/google";
+import Advice from "@/app/blog/recommendations/page";
 const inconsolata = Inconsolata({weight: ['300'], subsets: ['latin']})
 
 export async function generateMetadata({ params: { title } }: {params: { title: string,}}) {
@@ -28,6 +29,7 @@ export async function generateMetadata({ params: { title } }: {params: { title: 
 
 export default function BlogLayout(props: {
     children: React.ReactNode
+    advice: React.ReactNode
 }) {
     return (
         <>
@@ -36,6 +38,7 @@ export default function BlogLayout(props: {
                     <div>
                         {props.children}
                     </div>
+
                 </div>
             </div>
         </>

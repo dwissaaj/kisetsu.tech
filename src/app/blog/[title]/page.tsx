@@ -1,5 +1,6 @@
 import {MDXRemote} from "next-mdx-remote/rsc";
 import Image from "next/image";
+import Advice from "@/app/blog/recommendations/page";
 
 export async function getData(title: string) {
     const change = title.replace("-", "%20")
@@ -14,10 +15,12 @@ export default async function Page({ params: { title } }: {params: { title: stri
 
     const data = await getData(title)
 
-    console.log(data)
     return (
         <>
-            <div className={'flex flex-col p-2 m-2 space-y-4 w-full items-center justify-center'}>
+            <div className={'grid grid-cols-1 lg:grid-cols-12 gap-3'}>
+
+
+            <div className={'col-span-8 flex flex-col p-2 m-2 space-y-4 w-full items-center justify-center'}>
                 <div className={'my-4 '}>
                     <div>
                         <div>
@@ -29,9 +32,9 @@ export default async function Page({ params: { title } }: {params: { title: stri
                     </div>
                     <div className={'my-4 rounded-md space-y-3 flex flex-col justify-center items-center'}>
                         <Image className={'rounded-md shadow-md shadow-neutral-50'} width={1000} height={1000} src={`${data.post.image_header}`} alt={`${data.post.title}`}  priority={true} />
-                        <p className={'text-light'}>{data.post.description}</p>
+                        <p className={'text-light break-all'}>{data.post.description}</p>
                     </div>
-                    <article className={'prose break-all text-white my-4'}>
+                    <article className={'prose prose-sm lg:prose-lg break-words text-white my-4'}>
                         <MDXRemote source={data.post.content} />
                     </article>
                     <div className={'flex space-x-2'}>
@@ -45,6 +48,11 @@ export default async function Page({ params: { title } }: {params: { title: stri
                         }
                     </div>
                 </div>
+
+            </div>
+            <div className={'col-span-3 my-12 '}>
+                <Advice />
+            </div>
             </div>
         </>
     )

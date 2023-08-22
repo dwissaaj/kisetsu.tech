@@ -1,7 +1,6 @@
 import {NextResponse} from "next/server";
 import {Post} from "@/type/dto";
 import {prisma} from "../../../../db/prisma";
-import {redirect} from "next/navigation";
 import {AxiosError} from "axios";
 
 export async function GET(request: Request){

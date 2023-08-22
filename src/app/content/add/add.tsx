@@ -154,6 +154,14 @@ export default function Add() {
                             <input id={'Japan'} type={'checkbox'} {...register("tag")} value={'Japan'}/>
                         </div>
                         <div>
+                            <label htmlFor="Coding">Coding</label>
+                            <input id={'Coding'} type={'checkbox'} {...register("tag")} value={'Coding'}/>
+                        </div>
+                        <div>
+                            <label htmlFor="Idol">Idol</label>
+                            <input id={'Idol'} type={'checkbox'} {...register("tag")} value={'Idol'}/>
+                        </div>
+                        <div>
                             <label htmlFor="published">Published</label>
                             <input id={'published'} checked={true} type={'checkbox'} {...register("published")} />
                         </div>

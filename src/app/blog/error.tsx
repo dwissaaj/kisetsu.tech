@@ -18,9 +18,10 @@ export default function Error({
 
     return (
 
-    <div className={`${vt323.className} flex flex-col justify-center items-center space-y-4`}>
+    <div className={`${vt323.className} flex flex-col justify-center items-center my-8 space-y-6`}>
             <div className={'flex flex-col items-center justify-center space-y-4'}>
                 <p className={'text-center text-xl lg:text-5xl '}>Something went wrong!!!.... 😢</p>
+
                 <button className={'bg-teal-500 p-2 rounded-md '}
                     onClick={
 
