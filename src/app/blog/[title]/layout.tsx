@@ -3,7 +3,7 @@
 import {getData} from "@/app/blog/[title]/page";
 import React from "react";
 import {Inconsolata} from "next/font/google";
-import Advice from "@/app/blog/recommendations/page";
+import Advice from "@/app/blog/advice/page";
 const inconsolata = Inconsolata({weight: ['300'], subsets: ['latin']})
 
 export async function generateMetadata({ params: { title } }: {params: { title: string,}}) {

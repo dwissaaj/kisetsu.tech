@@ -1,18 +1,16 @@
 import {prisma} from "../../../../db/prisma";
 import {NextResponse} from "next/server";
 
-export async function GET(request: Request){
+export async function GET(request: Request, {params} : {params: {tag: string[]}}){
     try {
         const post = await prisma.post.findMany({
-            where: {
-              tag: {
-                  has: 'Coding'
-              }
-            },
             select: {
                 title: true
             },
-            take: 10
+            take: 10,
+            orderBy:{
+                createdAt: 'desc'
+            }
         })
         return NextResponse.json({ post })
     }

@@ -2,16 +2,15 @@
 import useSWR from "swr";
 import Link from "next/link";
 import {Post} from "@/type/dto";
-import Error from "@/app/blog/recommendations/error";
-import Loading from "@/app/blog/recommendations/loading";
-import {toast} from "react-toastify";
+import Error from "@/app/blog/advice/error";
+import Loading from "@/app/blog/advice/loading";
 
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 export default function Advice() {
 
-    const { data, error, isLoading } = useSWR('/api/recommendations/', fetcher)
-    console.log(data)
+    const { data, error, isLoading } = useSWR(`/api/recommendations/`, fetcher)
+
     if (isLoading) {
         return <Error />
     }
@@ -27,7 +26,7 @@ export default function Advice() {
               <div className={'flex flex-col space-y-4'}>
                   {data.post.map((posts: Post) => {
                       return (
-                          <li key={posts.id as string} className={'list-disc hover:translate-x-4 hover:border-b-2 hover:border-teal-500 transition duration-300 ease-in-out'}>
+                          <li key={posts.id as string} className={'capitalize list-disc hover:translate-x-4 hover:border-b-2 hover:border-teal-500 transition duration-300 ease-in-out'}>
                               <Link className={' '}  href={`/blog/${posts.title}`}>{posts.title}</Link>
                           </li>
                       )

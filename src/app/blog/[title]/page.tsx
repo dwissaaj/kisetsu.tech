@@ -1,6 +1,6 @@
 import {MDXRemote} from "next-mdx-remote/rsc";
 import Image from "next/image";
-import Advice from "@/app/blog/recommendations/page";
+import Advice from "@/app/blog/advice/page";
 
 export async function getData(title: string) {
     const change = title.replace("-", "%20")
@@ -51,7 +51,7 @@ export default async function Page({ params: { title } }: {params: { title: stri
 
             </div>
             <div className={'col-span-3 my-12 '}>
-                <Advice />
+                <Advice  />
             </div>
             </div>
         </>
