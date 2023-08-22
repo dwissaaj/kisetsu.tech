@@ -2,6 +2,7 @@ import {NextAuthOptions} from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import {PrismaAdapter} from "@next-auth/prisma-adapter";
 import {prisma} from '../../db/prisma'
+import {cookies} from "next/headers";
 // use `prisma` in your application to read and write data in your DB
 export const options: NextAuthOptions = {
     providers: [
@@ -11,6 +12,7 @@ export const options: NextAuthOptions = {
         }),
 
     ],
-    adapter: PrismaAdapter(prisma)
+    adapter: PrismaAdapter(prisma),
+
 
 };

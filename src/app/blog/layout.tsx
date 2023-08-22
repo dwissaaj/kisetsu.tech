@@ -19,7 +19,7 @@ export default function BlogsLayout({
     children: React.ReactNode
 }) {
     return (
-        <div className={`${noto.className} mx-auto rounded-md shadow-xl container bg-neutral-700 p-2 m-4 `}>
+        <div className={`${noto.className} mx-auto rounded-md shadow-xl container `}>
             {children}
         </div>
     )
