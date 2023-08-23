@@ -12,3 +12,7 @@ export type Post = {
     key: Number,
     createdAt? : String
 }
+
+export type SearchQ = {
+    searchValue: string
+}

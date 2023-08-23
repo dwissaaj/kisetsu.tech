@@ -11,7 +11,7 @@ export async function getData(title: string) {
     return res.json()
 }
 
-export default async function Page({ params: { title } }: {params: { title: string,}}) {
+export default async function TitlePage({ params: { title } }: {params: { title: string,}}) {
 
     const data = await getData(title)
 
