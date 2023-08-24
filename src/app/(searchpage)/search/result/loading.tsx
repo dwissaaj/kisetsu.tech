@@ -4,9 +4,9 @@ const vt323 = VT323({weight: "400", subsets: ['latin']})
 export default function LoadingResult() {
     return (
         <>
-            <div className={'flex justify-center items-center my-8 h-screen'}>
+            <div className={'flex justify-center items-center my-8 w-screen h-screen'}>
                 <div className={''}>
-                    <h1 className={`text-center text-xl lg:text-5xl ${vt323.className}`}>Hold on a second.......💖</h1>
+                    <h1 className={`text-center text-xl lg:text-5xl ${vt323.className}`}>Try to find something...</h1>
                 </div>
             </div>
         </>

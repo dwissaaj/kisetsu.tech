@@ -4,13 +4,9 @@ import {Post} from "@/type/dto";
 import Loading from "@/app/blog/loading";
 import CardBlog from "@/app/blog/card";
 import Error from "@/app/blog/error";
-import {redirect, useSearchParams} from "next/navigation";
-import Link from "next/link";
-import {SubmitHandler, useForm} from "react-hook-form";
+import {redirect} from "next/navigation";
 import SearchPage from "@/app/blog/queryPage";
-type SearchValue ={
-    valueSearch: string
-}
+
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 export default function Blog() {
     const {data, error, isLoading} = useSWR('/api/blog', fetcher)

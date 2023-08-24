@@ -5,7 +5,7 @@ export default function LayoutResult({
 }) {
     return (
         <>
-            <div className={'flex w-screen my-4 justify-center items-center'}>
+            <div className={'flex w-screen my-4 justify-center items-center bg-black'}>
                 {children}
             </div>
         </>

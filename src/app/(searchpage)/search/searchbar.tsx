@@ -20,7 +20,7 @@ export default function Searchbar() {
 
 
     const onSubmit: SubmitHandler<SearchQ> = (data) => {
-        router.push(pathname + '/result/' + '?' + createQueryString('search', `${data.searchValue}`))
+        router.push(pathname + '/result/' + '?' + createQueryString('query', `${data.searchValue}`))
     }
     return (
         <>

@@ -24,7 +24,7 @@ export default function QueryPage() {
 
 
     const onSubmit: SubmitHandler<SearchQ> = (data) => {
-        router.push('search' + '/result/' + '?' + createQueryString('search', `${data.searchValue}`))
+        router.push('search' + '/result/' + '?' + createQueryString('query', `${data.searchValue}`))
     }
 
     return (

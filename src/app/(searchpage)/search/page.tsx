@@ -3,7 +3,7 @@ import Link from "next/link";
 import {useSearchParams} from "next/navigation";
 import QueryPage from "@/app/blog/queryPage";
 import {VT323} from "next/font/google";
-import Searchbar from "@/app/search/searchbar";
+import Searchbar from "@/app/(searchpage)/search/searchbar";
 const vt323 = VT323({weight: "400", subsets: ['latin']})
 export default function SearchPage() {
     const searchParams = useSearchParams()
