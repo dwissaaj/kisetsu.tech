@@ -1,6 +1,8 @@
 import {MDXRemote} from "next-mdx-remote/rsc";
 import Image from "next/image";
 import Advice from "@/app/blog/advice/page";
+import Link from "next/link";
+import {useSearchParams} from "next/navigation";
 
 export async function getData(title: string) {
     const change = title.replace("-", "%20")
@@ -10,6 +12,7 @@ export async function getData(title: string) {
     }
     return res.json()
 }
+
 
 export default async function TitlePage({ params: { title } }: {params: { title: string,}}) {
 
@@ -42,7 +45,7 @@ export default async function TitlePage({ params: { title } }: {params: { title:
                         {
                             data.post.tag.map((tags: string) => {
                                 return (
-                                    <p className={'hover:-translate-y-2 transition duration-300 ease-in-out bg-pink-500 rounded-md p-2 '} key={tags}>{tags}</p>
+                                    <Link href={`/search/result/?filter=${tags}`} className={'hover:-translate-y-2 transition duration-300 ease-in-out bg-pink-500 rounded-md p-2 '} key={tags}>{tags}</Link>
                                 )
                             })
                         }

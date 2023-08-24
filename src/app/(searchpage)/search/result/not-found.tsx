@@ -10,7 +10,7 @@ export default function NotFoundFilter() {
             <div className={'w-screen h-screen flex justify-center items-center'}>
                 <div className={'flex flex-col justify-center items-center space-y-4'}>
                     <div className={'text-lg md:text-2xl lg:text-3xl'}>
-                        <p >There is no post contain
+                        <p >There is no post associated with
                             <span className={'line-through'}> {search} </span>
                         </p>
                     </div>

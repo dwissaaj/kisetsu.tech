@@ -14,8 +14,8 @@ const fetcher = (url: string) => fetch(url).then(r => r.json())
 export default async function ResultPage() {
     const slugify = require('slugify')
     const searchParams = useSearchParams()
-    const search = searchParams.get('query')
-    const { data, isLoading, error } = useSWR(() => search ? `/api/search/searchall?query=${search}` : null, fetcher)
+    const search = searchParams.get('filter')
+    const { data, isLoading, error } = useSWR(() => search ? `/api/search/result?filter=${search}` : null, fetcher)
     if(!search) {
         redirect('/search')
     }
