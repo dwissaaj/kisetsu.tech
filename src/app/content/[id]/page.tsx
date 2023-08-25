@@ -22,8 +22,8 @@ export default async function Page({ params }: { params: { id: string } }) {
             writer,
             description} = data
         try {
-            axios.patch(`/api/content/${params.id}`,
-                {title,content, tag, author, image_content, image_header, published, writer,description})
+            await axios.patch(`/api/content/${params.id}`,
+                {title, content, tag, author, image_content, image_header, published, writer, description})
             toast.success("Changed !", {
                 position: toast.POSITION.BOTTOM_CENTER, theme: "dark",  icon: "🚧"
             });

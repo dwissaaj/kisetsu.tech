@@ -5,10 +5,6 @@ import LoadingResult from "@/app/(searchpage)/search/result/loading";
 import Error from "@/app/blog/error";
 import NotFoundFilter from "@/app/(searchpage)/search/result/not-found";
 import {Post} from "@/type/dto";
-import CardBlog from "@/app/blog/card";
-import Image from "next/image";
-import Link from "next/link";
-import slugify from "slugify";
 import CardSearch from "@/app/(searchpage)/search/result/cardsearch";
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 export default async function ResultPage() {
@@ -31,7 +27,7 @@ export default async function ResultPage() {
 
     return (
         <>
-            <div className={'flex w-screen justify-center items-center m-2 p-2'}>
+            <div className={'flex justify-center items-center'}>
                 <div className={'flex flex-col gap-4'}>
                     <div className={'text-lg md:text-2xl lg:text-3xl'}>
                         <p >Result for {search}

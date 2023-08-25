@@ -34,6 +34,9 @@ export async function POST(request: Request) {
 
             }
         })
+        if(post) {
+            return NextResponse.json({status: 200, message:'Success'})
+        }
         console.log(post)
 
 

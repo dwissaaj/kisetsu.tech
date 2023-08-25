@@ -1,14 +1,12 @@
 'use client'
 
 import {SubmitHandler, useForm} from "react-hook-form";
-import Link from "next/link";
-import {useCallback, useState} from "react";
-import {usePathname, useRouter} from "next/navigation";
+import {useCallback} from "react";
+import { useRouter} from "next/navigation";
 type SearchQ = {
     searchValue: string
 }
 export default function QueryPage() {
-    const pathname = usePathname()
     const router = useRouter()
     const createQueryString = useCallback(
         (name: string, value: string) => {

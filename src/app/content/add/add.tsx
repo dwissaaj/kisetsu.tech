@@ -2,8 +2,6 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Post} from "@/type/dto";
 import {toast, ToastContainer} from "react-toastify";
-import {redirect} from "next/navigation";
-import axios, {AxiosError} from "axios";
 
 export default function Add() {
     const { register, handleSubmit,getValues } = useForm<Post>()

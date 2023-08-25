@@ -1,8 +1,6 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import {Post} from "@/type/dto";
-import slugify from "slugify";
 type CardPost = {
     id: string,
     title: string,

@@ -3,12 +3,11 @@
 import {getData} from "@/app/blog/[title]/page";
 import React from "react";
 import {Inconsolata} from "next/font/google";
-import Advice from "@/app/blog/advice/page";
 const inconsolata = Inconsolata({weight: ['300'], subsets: ['latin']})
 
 export async function generateMetadata({ params: { title } }: {params: { title: string,}}) {
     const data = await getData(title)
-    let decodeTitle = decodeURIComponent(data.post.title).split(" ");
+    let decodeTitle = decodeURIComponent(data?.post?.title).split(" ");
 
     for (let i = 0; i < decodeTitle.length; i++) {
         decodeTitle[i] = decodeTitle[i].charAt(0).toUpperCase() + decodeTitle[i].slice(1);
@@ -18,10 +17,10 @@ export async function generateMetadata({ params: { title } }: {params: { title: 
 
     return {
         title: `K-News: ${final}`,
-        description: `${data.post.description}`,
-        keywords: [`${data.post.tag}`],
-        authors: [{name: `${data.post.writer}`}, {name: 'Dwi Aji', url:'https://kisetsu.tech/'}],
-        creator: `${data.post.writer}`,
+        description: `This ${data?.post?.description}`,
+        keywords: [`${data?.post?.tag}`],
+        authors: [{name: `${data?.post?.writer}`}, {name: 'Dwi Aji', url:'https://kisetsu.tech/'}],
+        creator: `${data?.post?.writer}`,
         publisher: 'Kisetsu Tech'
 
     }

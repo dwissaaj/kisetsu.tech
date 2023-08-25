@@ -1,7 +1,4 @@
 'use client' // Error components must be Client Components
-
-import { useEffect } from 'react'
-import Image from "next/image";
 import {VT323} from "next/font/google";
 const vt323 = VT323({weight: "400", subsets: ['latin']})
 export default function Error() {

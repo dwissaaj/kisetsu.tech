@@ -1,7 +1,7 @@
 'use client'
 import {Press_Start_2P} from "next/font/google";
-import {getSession, signIn, signOut} from "next-auth/react";
-import {redirect} from "next/navigation";
+import {signOut} from "next-auth/react";
+
 const press2start = Press_Start_2P({weight: "400", subsets: ['latin']})
 export default function Logout() {
     return (
