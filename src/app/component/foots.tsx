@@ -8,7 +8,7 @@ const vt323 = VT323({weight: ['400'], subsets: ['latin']});
 export default function Foots() {
     return (
         <div
-            className={'static h-full w-full bottom-0 top-0 left-0 right-0 p-2 mt-16  bg-neutral-800 shadow-lg shadow-neutral-900 flex justify-center border-t border-neutral-900 text-center'}>
+            className={'static h-full w-full bottom-0 top-0 left-0 right-0 p-2  bg-neutral-800 shadow-lg shadow-neutral-900 flex justify-center border-t border-neutral-900 text-center'}>
             <div className={'mx-auto container flex flex-col'} >
 
                 <div className={'flex flex-row justify-between m-2 p-2'}>
@@ -19,16 +19,16 @@ export default function Foots() {
                         <div className={`${shareTech.className} w-full flex flex-col space-y-4 justify-start text-start`}>
                             <Link
                                 className={'text-sm md:text-md text-neutral-600 hover:text-neutral-200 transition duration-300 ease-in-out'}
-                                href={'https://www.instagram.com/dwisaji/'}>Home</Link>
+                                href={'/skill'}>Skill</Link>
                             <Link
                                 className={'text-sm md:text-md text-neutral-600 hover:text-neutral-200 transition duration-300 ease-in-out'}
-                                href={'/career/'}>About </Link>
+                                href={'/about'}>About </Link>
                             <Link
                                 className={'text-sm md:text-md text-neutral-600 hover:text-neutral-200 transition duration-300 ease-in-out'}
                                 href={'https://journal.moestopo.ac.id/index.php/pustakom/article/view/2438/1221'}>Paper </Link>
                             <Link
                                 className={'text-sm md:text-md text-neutral-600 hover:text-neutral-200 transition duration-300 ease-in-out'}
-                                href={'https://sakamichi.online/members'}>Sakamichi </Link>
+                                href={'https://sakamichi.online/members'}>Sakamichi (Offline)</Link>
                         </div>
                     </div>
                     <div className={'flex flex-col gap-4'}>

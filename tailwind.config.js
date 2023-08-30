@@ -14,6 +14,7 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'my_bg_image' : "url('../../public/bg.png')",
+        'blog_bg' : "url('../../public/blogs.png')",
       },
       animation: {
         loopLtr: 'loopLtr 7s infinite',

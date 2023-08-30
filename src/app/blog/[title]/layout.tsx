@@ -26,18 +26,16 @@ export async function generateMetadata({ params: { title } }: {params: { title: 
     }
 }
 
-export default function BlogLayout(props: {
+export default function Layout({
+                                       children,
+                                   }: {
     children: React.ReactNode
-    advice: React.ReactNode
 }) {
     return (
         <>
-            <div className={` ${inconsolata.className} font-normal`}>
-                <div className={''}>
-                    <div>
-                        {props.children}
-                    </div>
-
+            <div className={` ${inconsolata.className} font-normal bg-black w-screen `}>
+                <div className={'mx-auto container'}>
+                    {children}
                 </div>
             </div>
         </>

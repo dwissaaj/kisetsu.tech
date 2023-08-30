@@ -34,8 +34,8 @@ export default async function Navi() {
                                 className={pathname === '/blog' ? 'hover:text-pink-500 bg-neutral-700 text-gray-500 px-2  rounded-md' : 'hover:text-pink-500 '}
                                 href={'/blog'}>Blog</Link>
                             <Link
-                                className={pathname === '/career' ? 'hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'hover:text-pink-500 '}
-                                href={'/career'}>Career</Link>
+                                className={pathname === '/skill' ? 'hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'hover:text-pink-500 '}
+                                href={'/skill'}>Skills</Link>
                             <Menu as="div" className="relative inline-block text-left">
                                 <Menu.Button className="flex items-center">
                                     <p className={'hover:text-pink-500'}>Data</p>
@@ -127,9 +127,9 @@ export default async function Navi() {
                             </Menu>
                         </Disclosure>
                     </div>
-                    <div className={'hidden md:block'}>
-                        <Username />
-                    </div>
+                    {/*<div className={'hidden md:block'}>*/}
+                    {/*    <Username />*/}
+                    {/*</div>*/}
                 </div>
             </nav>
 

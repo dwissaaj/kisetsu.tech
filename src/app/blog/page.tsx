@@ -6,6 +6,8 @@ import CardBlog from "@/app/blog/card";
 import Error from "@/app/blog/error";
 import {redirect} from "next/navigation";
 import SearchPage from "@/app/blog/queryPage";
+import Image from "next/image";
+import Link from "next/link";
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 export default function Blog() {
@@ -14,19 +16,36 @@ export default function Blog() {
     if (isLoading) return <Loading/>
     return (
         <>
-            <div className={'container mx-auto my-8'}>
+            <div className={'container mx-auto '}>
 
-                <div className={'bg-neutral-700 p-2 m-2 my-4'}>
+                <div className={''}>
                     <div className={'flex justify-center w-full'}>
                         <SearchPage />
                     </div>
-                    <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3'}>
+                    <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 m-2 p-2'}>
                         {
                             data?.post?.map((posts: Post) => {
                                 return (
-                                    <CardBlog key={posts.id as string} id={posts.id as string}
-                                              title={posts.title as string} image_header={posts.image_header as string}
-                                              writer={posts.writer as string}/>
+                                    <div key={posts.id as string}>
+                                        <div className={'flex flex-col bg-neutral-900 border-2 rounded-md border-neutral-200 p-2 gap-2 hover:border-pink-200' +
+                                            'transition duration-300 ease-in-out hover:-translate-y-2 hover:translate-x-2 hover:shadow-[-16px_12px_0px_-2px_rgba(27,145,111,0.75)]'}  >
+                                            <div>
+                                                <Image className="rounded-md mx-1 px-1 bg-center" src={`${posts.image_header}`} alt={`${posts.title}`} height={400} width={400} />
+
+                                            </div>
+                                            <div className={'capitalize font-bold text-pink-400'}>
+                                                <h1>{posts.title}</h1>
+                                            </div>
+                                            <div>
+                                                <p>{posts.createdAt?.substring(0,10)}</p>
+                                            </div>
+                                            <div>
+                                                <Link className={'hover:border-b-2 hover:border-blue-300'} href={`/blog/${posts.title}`}>
+                                                    Read more...
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
                                 )
                             })
                         }

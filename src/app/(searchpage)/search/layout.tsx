@@ -20,7 +20,7 @@ export default function LayoutSearch({
 
     return (
         <>
-            <div className={`${inconsolata.className} bg-my_bg_image bg-black w-full h-full bg-no-repeat bg-center`}>
+            <div className={`${inconsolata.className} bg-my_bg_image bg-black `}>
                 {children}
             </div>
         </>

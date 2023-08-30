@@ -5,7 +5,7 @@ import Link from "next/link"
 export default function Username() {
     const { data: session, status } = useSession()
     if (status == 'unauthenticated') {
-        return <Link href={'/login'} className={'p-2 lg:text-2xl border rounded-md border-teal-500'}>Login</Link>
+        return <button disabled={true} className={'p-2 lg:text-2xl border rounded-md border-teal-500'}>Login</button>
     }
     if (session) {
         return (

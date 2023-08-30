@@ -10,6 +10,10 @@ const roboto = Roboto({ subsets: ['latin'], weight: ['300','500','700'] })
 export const metadata = {
   title: 'Kisetsu Tech',
   description: 'Personal Website for Dwi Setyo Aji',
+    keywords: 'Personal Website, Data Analyst, Front End Developer',
+    authors: [{name: `Dwi Setyo Aji`}, {name: 'Dwi Aji', url:'https://kisetsu.tech/'}],
+    creator: `Dwi Setyo Aji`,
+    publisher: 'Kisetsu Tech'
 }
 
 
