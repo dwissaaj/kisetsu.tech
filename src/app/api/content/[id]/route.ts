@@ -15,7 +15,6 @@ export async function GET(request: Request, {params} : {params: {id: string}} ) 
 export async function PATCH(request: Request, {params} : {params: {id: string}} ) {
     const id = params.id
     const json: Post = await request.json()
-    const body = request.body
     try {
         const updatePost = await prisma.post.update({
             where: {
@@ -27,7 +26,6 @@ export async function PATCH(request: Request, {params} : {params: {id: string}} 
                 tag: json.tag as string[],
                 image_header: json.image_header as string,
                 writer: json.writer as string,
-                image_content: json.image_content as string,
                 published: json.published as boolean,
                 description: json.description as string,
                 author: {

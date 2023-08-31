@@ -46,3 +46,6 @@ Dockerfile
 
 #file
 file
+
+# Contentlayer
+.contentlayer

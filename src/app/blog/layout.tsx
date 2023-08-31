@@ -1,7 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
-import {Noto_Serif} from "next/font/google";
+import {Inconsolata} from "next/font/google";
 
-const noto = Noto_Serif({weight: ['400'], subsets: ['latin']})
+const inconsolata = Inconsolata({weight: ['300'], subsets: ['latin']})
 export async function generateMetadata() {
     return {
         title: `Kisetsu Blog`,
@@ -19,7 +19,7 @@ export default function BlogsLayout({
     children: React.ReactNode
 }) {
     return (
-        <div className={`${noto.className} mx-auto rounded-md shadow-xl container `}>
+        <div className={`${inconsolata.className} mx-auto h-full`}>
             {children}
         </div>
     )

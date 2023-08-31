@@ -1,11 +1,10 @@
 import Image from "next/image";
-import {useCallback, useRef} from "react";
+import {useCallback} from "react";
 import {useInView} from "react-intersection-observer";
 import {Space_Mono, VT323} from "next/font/google";
 const spaceMono = Space_Mono({weight:'400', subsets: ['latin']})
 const vt323 = VT323({weight: "400", subsets: ['latin']})
 export default function Development() {
-    const ref = useRef();
     const [inViewRef, inView] = useInView({threshold: 0.9, delay:100})
     const [inViewRef2, inView2] = useInView({threshold: 0.9, delay:100})
     const [inViewRef3, inView3] = useInView({threshold: 0.9, delay:100})

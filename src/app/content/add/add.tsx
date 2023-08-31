@@ -2,15 +2,13 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Post} from "@/type/dto";
 import {toast, ToastContainer} from "react-toastify";
-import {redirect} from "next/navigation";
-import axios, {AxiosError} from "axios";
 
 export default function Add() {
     const { register, handleSubmit,getValues } = useForm<Post>()
 
     const onSubmit: SubmitHandler<Post> = async (data)  => {
         let { title, content, tag, published,
-            author, image_content, image_header,
+            author, image_header,
             writer,
         description} = data
         try {
@@ -21,7 +19,7 @@ export default function Add() {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        title,content, tag, author, image_content, image_header, published, writer,description
+                        title,content, tag, author, image_header, published, writer,description
                     })
                 })
             if(res.status === 200) {
@@ -59,10 +57,6 @@ export default function Add() {
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'writer'}>writer</label>
                         <input id={'writer'}  {...register("writer")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
-                    </div>
-                    <div className={'flex flex-col gap-2 text-neutral-900'}>
-                        <label htmlFor={'image_content'}>image_content</label>
-                        <input  id={'image_content'} {...register("image_content")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                     </div>
                     <div className={'flex flex-col gap-2 text-neutral-900'}>
                         <label htmlFor={'image_header'}>image_header</label>

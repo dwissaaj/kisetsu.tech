@@ -18,12 +18,13 @@ export default async function Page({ params }: { params: { id: string } }) {
 
     const onSubmit: SubmitHandler<Post> = async (data)  => {
         let { title, content, tag, published,
-            author, image_content, image_header,
+            author, image_header,
             writer,
             description} = data
         try {
-            axios.patch(`/api/content/${params.id}`,
-                {title,content, tag, author, image_content, image_header, published, writer,description})
+            await axios.patch(`/api/content/${params.id}`,
+                {title, content, tag, author, image_header, published, writer, description})
+
             toast.success("Changed !", {
                 position: toast.POSITION.BOTTOM_CENTER, theme: "dark",  icon: "🚧"
             });
@@ -75,19 +76,15 @@ export default async function Page({ params }: { params: { id: string } }) {
                             <input id={'writer'} defaultValue={`${data.writer}`} {...register("writer")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                         </div>
                         <div className={'flex flex-col gap-2 text-neutral-900'}>
-                            <label htmlFor={'image_content'}>image_content</label>
-                            <input id={'image_content'} defaultValue={`${data.image_content}`}  {...register("image_content")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
+                            <label htmlFor={'description'}>description</label>
+                            <input id={'description'} defaultValue={`${data.description}`} {...register("description")} className={'rounded-md h-[200px]'} />
                         </div>
                         <div className={'flex flex-col gap-2 text-neutral-900'}>
                             <label htmlFor={'image_header'}>image_header</label>
                             <input id={'image_header'} defaultValue={`${data.image_header}`} {...register("image_header")}   className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                         </div>
-                        <div className={'flex flex-col gap-2 text-neutral-900'}>
-                            <label htmlFor={'description'}>description</label>
-                            <input id={'description'} defaultValue={`${data.description}`} {...register("description")} className={'rounded-md h-[200px]'} />
-                        </div>
-                        <input className={'p-2 border-sky-500 rounded-md border'} type={"submit"}/>
 
+                        <input className={'p-2 border-sky-500 rounded-md border'} type={"submit"}/>
 
                     </form>
                 </div>

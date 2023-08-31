@@ -7,8 +7,11 @@ export type Post = {
     author: String,
     description: String,
     image_header: String,
-    image_content: String,
     published: Boolean,
     key: Number,
     createdAt? : String
+}
+
+export type SearchQ = {
+    searchValue: string
 }

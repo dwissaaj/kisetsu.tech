@@ -25,7 +25,6 @@ export async function POST(request: Request) {
                 tag: json.tag as string[],
                 image_header: json.image_header as string,
                 writer: json.writer as string,
-                image_content: json.image_content as string,
                 published: json.published as boolean,
                 description: json.description as string,
                 author: {
@@ -34,6 +33,9 @@ export async function POST(request: Request) {
 
             }
         })
+        if(post) {
+            return NextResponse.json({status: 200, message:'Success'})
+        }
         console.log(post)
 
 

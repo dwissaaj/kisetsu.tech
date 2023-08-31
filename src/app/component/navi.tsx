@@ -4,7 +4,7 @@ import Link from "next/link";
 import {Disclosure, Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon} from "@heroicons/react/20/solid";
 import {usePathname} from "next/navigation";
-import Username from "@/app/component/username";
+
 import {VT323} from "next/font/google";
 
 function classNames(...classes: any[]) {
@@ -25,17 +25,14 @@ export default async function Navi() {
                     <div className={'flex gap-4 lg:gap-8'}>
                         <Disclosure>
                             <Link
-                                className={pathname === '/' ? 'md:block hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'md:block hover:text-pink-500 '}
-                                href={'/'}>Home</Link>
-                            <Link
-                                className={pathname === '/dashboard' ? 'sm:block md:hidden hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'sm:block md:hidden hover:text-pink-500 '}
-                                href={'/'}>Dashboard</Link>
+                                className={pathname === '/about' ? 'md:block hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'md:block hover:text-pink-500 '}
+                                href={'/about'}>About</Link>
                             <Link
                                 className={pathname === '/blog' ? 'hover:text-pink-500 bg-neutral-700 text-gray-500 px-2  rounded-md' : 'hover:text-pink-500 '}
                                 href={'/blog'}>Blog</Link>
                             <Link
-                                className={pathname === '/career' ? 'hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'hover:text-pink-500 '}
-                                href={'/career'}>Career</Link>
+                                className={pathname === '/skill' ? 'hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'hover:text-pink-500 '}
+                                href={'/skill'}>Skills</Link>
                             <Menu as="div" className="relative inline-block text-left">
                                 <Menu.Button className="flex items-center">
                                     <p className={'hover:text-pink-500'}>Data</p>
@@ -121,15 +118,28 @@ export default async function Navi() {
                                                 </Link>
                                             )}
                                         </Menu.Item>
+                                        <Menu.Item>
+                                            {({active}) => (
+                                                <Link
+                                                    href={'/privacy'}
+                                                    className={classNames(
+                                                        active ? 'bg-[#FD8A8A] text-gray-900' : 'text-gray-700',
+                                                        'block px-4 py-2 text-sm'
+                                                    )}
+                                                >
+                                                    Privacy Policy
+                                                </Link>
+                                            )}
+                                        </Menu.Item>
                                     </Menu.Items>
                                 </Transition>
 
                             </Menu>
                         </Disclosure>
                     </div>
-                    <div className={'hidden md:block'}>
-                        <Username />
-                    </div>
+                    {/*<div className={'hidden md:block'}>*/}
+                    {/*    <Username />*/}
+                    {/*</div>*/}
                 </div>
             </nav>
 
