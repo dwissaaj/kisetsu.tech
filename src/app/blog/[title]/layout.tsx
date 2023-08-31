@@ -33,10 +33,8 @@ export default function Layout({
 }) {
     return (
         <>
-            <div className={` ${inconsolata.className} font-normal bg-black w-screen `}>
-                <div className={'mx-auto container'}>
-                    {children}
-                </div>
+            <div className={`${inconsolata.className} mx-auto h-max `}>
+                {children}
             </div>
         </>
     )

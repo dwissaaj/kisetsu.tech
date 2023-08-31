@@ -19,7 +19,7 @@ export default function BlogsLayout({
     children: React.ReactNode
 }) {
     return (
-        <div className={`${inconsolata.className} mx-auto h-screen bg-blog_bg bg-black bg-no-repeat bg-center bg-cover`}>
+        <div className={`${inconsolata.className} mx-auto h-full`}>
             {children}
         </div>
     )

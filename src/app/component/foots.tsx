@@ -7,7 +7,7 @@ const shareTech = Share_Tech_Mono({weight: ['400'], style: ['normal'], subsets: 
 const vt323 = VT323({weight: ['400'], subsets: ['latin']});
 export default function Foots() {
     return (
-        <div
+        <footer
             className={'static h-full w-full bottom-0 top-0 left-0 right-0 p-2  bg-neutral-800 shadow-lg shadow-neutral-900 flex justify-center border-t border-neutral-900 text-center'}>
             <div className={'mx-auto container flex flex-col'} >
 
@@ -75,7 +75,7 @@ export default function Foots() {
                 </div>
             </div>
 
-        </div>
+        </footer>
 
 
     )
