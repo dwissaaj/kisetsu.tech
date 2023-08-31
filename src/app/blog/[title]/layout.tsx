@@ -1,8 +1,10 @@
 // noinspection JSUnusedGlobalSymbols
 
-import {getData} from "@/app/blog/[title]/page";
+
 import React from "react";
 import {Inconsolata} from "next/font/google";
+import {getData} from "@/app/blog/[title]/get-data";
+
 const inconsolata = Inconsolata({weight: ['300'], subsets: ['latin']})
 
 export async function generateMetadata({ params: { title } }: {params: { title: string,}}) {
