@@ -3,13 +3,13 @@ import {ComponentPreview, Previews} from "@react-buddy/ide-toolbox-next";
 import {PaletteTree} from "./palette";
 import UMKM from "@/app/umkm/page";
 import Navi from "@/app/component/navi";
-import Career from "@/app/career/page";
+import Career from "@/app/skill/page";
 import Blog from "@/app/blog/page";
 import Home from "@/app/page";
 import Foots from "@/app/component/foots";
-import Social from "@/app/component/home/Social";
-import Development from "@/app/component/home/Development";
-import DataAnalyst from "@/app/component/home/DataAnalyst";
+import Social from "@/app/about/home/Social";
+import Development from "@/app/about/home/Development";
+import DataAnalyst from "@/app/about/home/DataAnalyst";
 
 const ComponentPreviews = () => {
     return (

@@ -33,3 +33,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# env file
+.env
+
+#database
+db.json
+
+#docker
+compose.yaml
+Dockerfile
+
+#file
+file
+
+# Contentlayer
+.contentlayer

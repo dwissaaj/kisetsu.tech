@@ -1,9 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
     images: {
-        domains: ['res.cloudinary.com'],
-    },
-}
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'lh3.googleusercontent.com',
 
-module.exports = nextConfig
+            },
+        ],
+        domains: ['res.cloudinary.com', 'xgddmaybsftuiidgvjys.supabase.co'],
+    },
+    experimental: {
+        mdxRs: true,
+    },
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx']
+
+}
+const withMDX = require('@next/mdx')({
+    // ...
+    options: {
+        providerImportSource: '@mdx-js/react',
+    },
+})
+module.exports = withMDX(nextConfig)
