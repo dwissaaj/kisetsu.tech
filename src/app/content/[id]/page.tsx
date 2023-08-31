@@ -18,12 +18,12 @@ export default async function Page({ params }: { params: { id: string } }) {
 
     const onSubmit: SubmitHandler<Post> = async (data)  => {
         let { title, content, tag, published,
-            author, image_content, image_header,
+            author, image_header,
             writer,
             description} = data
         try {
             await axios.patch(`/api/content/${params.id}`,
-                {title, content, tag, author, image_content, image_header, published, writer, description})
+                {title, content, tag, author, image_header, published, writer, description})
 
             toast.success("Changed !", {
                 position: toast.POSITION.BOTTOM_CENTER, theme: "dark",  icon: "🚧"
@@ -74,10 +74,6 @@ export default async function Page({ params }: { params: { id: string } }) {
                         <div className={'flex flex-col gap-2 text-neutral-900'}>
                             <label htmlFor={'writer'}>writer</label>
                             <input id={'writer'} defaultValue={`${data.writer}`} {...register("writer")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
-                        </div>
-                        <div className={'flex flex-col gap-2 text-neutral-900'}>
-                            <label htmlFor={'image_content'}>image_content</label>
-                            <input id={'image_content'} defaultValue={`${data.image_content}`}  {...register("image_content")} className={'rounded-md w-42 h-42 md:62 md:h-62 lg:96 lg:96'} />
                         </div>
                         <div className={'flex flex-col gap-2 text-neutral-900'}>
                             <label htmlFor={'description'}>description</label>

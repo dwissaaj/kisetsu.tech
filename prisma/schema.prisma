@@ -64,9 +64,7 @@ model Post {
   description String
   writer    String
   tag       String[]
-
   image_header String
-  image_content String
   author    User     @relation(fields: [authorId], references: [email])
 }
 

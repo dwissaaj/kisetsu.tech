@@ -11,7 +11,7 @@ export default function Foots() {
             className={'static h-full w-full bottom-0 top-0 left-0 right-0 p-2  bg-neutral-800 shadow-lg shadow-neutral-900 flex justify-center border-t border-neutral-900 text-center'}>
             <div className={'mx-auto container flex flex-col'} >
 
-                <div className={'flex flex-row justify-between m-2 p-2'}>
+                <div className={'grid grid-cols-1 md:grid-cols-3 md:justify-items-center '}>
                     <div className={'flex flex-col gap-4'}>
                         <div className={'text-lg md:text-2xl lg:text-4xl text-start '}>
                             <p className={`${vt323.className}`}>Explore</p>
@@ -19,10 +19,10 @@ export default function Foots() {
                         <div className={`${shareTech.className} w-full flex flex-col space-y-4 justify-start text-start`}>
                             <Link
                                 className={'text-sm md:text-md text-neutral-600 hover:text-neutral-200 transition duration-300 ease-in-out'}
-                                href={'/skill'}>Skill</Link>
+                                href={'https://www.notion.so/Design-Portfolio-e3d8261434b2445788742e997a8e0783?pvs=4'}>Notion</Link>
                             <Link
                                 className={'text-sm md:text-md text-neutral-600 hover:text-neutral-200 transition duration-300 ease-in-out'}
-                                href={'/about'}>About </Link>
+                                href={'https://drive.google.com/drive/folders/13jNXBZnhBEzsT4ZqBIwTbOj_z3TohPuy?usp=drive_link'}>Cloud </Link>
                             <Link
                                 className={'text-sm md:text-md text-neutral-600 hover:text-neutral-200 transition duration-300 ease-in-out'}
                                 href={'https://journal.moestopo.ac.id/index.php/pustakom/article/view/2438/1221'}>Paper </Link>
@@ -70,7 +70,7 @@ export default function Foots() {
                         </div>
                     </div>
                 </div>
-                <div className={'m-4 p-2'}>
+                <div className={'mt-4 p-2'}>
                     <p className={`${vt323.className} text-lg`}>Kisetsu tech 2023</p>
                 </div>
             </div>

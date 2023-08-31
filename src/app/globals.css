@@ -21,6 +21,33 @@
   .background-animation {
     @apply absolute blur-xl opacity-50 rounded-full
   }
+  .defaultHome {
+    @apply bg-gradient-to-r from-teal-700 to-yellow-300
+  }
+  .blueHome {
+    @apply !bg-gradient-to-r !from-blue-700 !to-blue-200;
+  }
+  .purpleHome {
+    @apply !bg-gradient-to-r !from-purple-700 !to-purple-300
+  }
+  .redHome {
+    @apply !bg-gradient-to-r !from-rose-800 !to-rose-400
+  }
+  .defaultHomeBg {
+    @apply bg-teal-600
+  }
+  .blueHomeBg {
+    @apply !bg-blue-500
+  }
+  .purpleHomeBg {
+    @apply !bg-purple-600
+  }
+  .redHomeBg {
+    @apply !bg-red-500
+  }
+  .defaultHomeWhite {
+    @apply bg-white
+  }
 }
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
@@ -72,6 +99,7 @@
   .scrollbar-2::-webkit-scrollbar-thumb:hover {
     background: #22a699;
   }
+
 }
 @media (prefers-color-scheme: dark) {
   :root {

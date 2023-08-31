@@ -4,7 +4,7 @@ import Link from "next/link";
 import {Disclosure, Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon} from "@heroicons/react/20/solid";
 import {usePathname} from "next/navigation";
-import Username from "@/app/component/username";
+
 import {VT323} from "next/font/google";
 
 function classNames(...classes: any[]) {
@@ -25,11 +25,8 @@ export default async function Navi() {
                     <div className={'flex gap-4 lg:gap-8'}>
                         <Disclosure>
                             <Link
-                                className={pathname === '/' ? 'md:block hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'md:block hover:text-pink-500 '}
-                                href={'/'}>Home</Link>
-                            <Link
-                                className={pathname === '/dashboard' ? 'sm:block md:hidden hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'sm:block md:hidden hover:text-pink-500 '}
-                                href={'/'}>Dashboard</Link>
+                                className={pathname === '/about' ? 'md:block hover:text-pink-500 bg-neutral-700 text-gray-500 px-2 rounded-md' : 'md:block hover:text-pink-500 '}
+                                href={'/about'}>About</Link>
                             <Link
                                 className={pathname === '/blog' ? 'hover:text-pink-500 bg-neutral-700 text-gray-500 px-2  rounded-md' : 'hover:text-pink-500 '}
                                 href={'/blog'}>Blog</Link>
