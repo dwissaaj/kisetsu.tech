@@ -1,19 +1,13 @@
-import {MDXRemote} from "next-mdx-remote/rsc";
+
 import Image from "next/image";
 import Advice from "@/app/blog/advice/page";
 import Link from "next/link";
+import {MDXRemote} from "next-mdx-remote/rsc";
+import {getData} from "@/app/blog/[title]/get-data";
 
 
-export async function getData(title: string) {
-    const res = await fetch(`http://localhost:3000/api/blog/${title}`)
-    if (!res.ok) {
-        throw new Error('Failed to fetch data')
-    }
-    return res.json()
-}
 
-
-export default async function TitlePage({params: {title}}: { params: { title: string, } }) {
+export default async function Page({params: {title}}: { params: { title: string, } }) {
 
     const data = await getData(title)
         return (

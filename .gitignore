@@ -49,3 +49,6 @@ file
 
 # Contentlayer
 .contentlayer
+
+#component dev file
+/src/components
