@@ -28,7 +28,7 @@ export default function Foots() {
                                 href={'https://journal.moestopo.ac.id/index.php/pustakom/article/view/2438/1221'}>Paper </Link>
                             <Link
                                 className={'text-sm md:text-md text-neutral-600 hover:text-neutral-200 transition duration-300 ease-in-out'}
-                                href={'https://sakamichi.online/members'}>Sakamichi (Offline)</Link>
+                                href={'https://github.com/dwissaaj/sakamichi46'}>Sakamichi (Offline)</Link>
                         </div>
                     </div>
                     <div className={'flex flex-col gap-4'}>
@@ -67,6 +67,9 @@ export default function Foots() {
                             <Link
                                 className={'text-sm md:text-md text-neutral-600 hover:text-neutral-200 transition duration-300 ease-in-out'}
                                 href={'https://lightsail.aws.amazon.com/'}>AWS Lightsail</Link>
+                            <Link
+                                className={'text-sm md:text-md text-neutral-600 hover:text-neutral-200 transition duration-300 ease-in-out'}
+                                href={'https://redis.io/'}>Redis</Link>
                         </div>
                     </div>
                 </div>
