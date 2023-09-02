@@ -3,9 +3,10 @@ import React, {Fragment} from "react";
 import Link from "next/link";
 import {Disclosure, Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon} from "@heroicons/react/20/solid";
-import {usePathname} from "next/navigation";
+
 
 import {VT323} from "next/font/google";
+import {usePathname} from "next/navigation";
 
 function classNames(...classes: any[]) {
     return classes.filter(Boolean).join(' ')
@@ -13,7 +14,6 @@ function classNames(...classes: any[]) {
 const vt323 = VT323({weight: "400", subsets: ['latin']})
 export default async function Navi() {
     const pathname = usePathname()
-
     return (
         <>
             <nav className={`${vt323.className} md:text-xl lg:text-3xl`}>
