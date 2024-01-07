@@ -1,12 +1,72 @@
 'use client'
 import "./about/swipercustom.css"
-import {GoogleAnalytics} from "nextjs-google-analytics";
-import {useRef} from "react";
+import { GoogleAnalytics } from "nextjs-google-analytics";
+import { useRef } from "react";
 import { useHover } from 'usehooks-ts'
 import Link from "next/link";
 import Image from "next/image";
 
 
+let DataDesign =
+        [
+            {
+                id: 1, url : '/design/1.png', alt: 'Cosplay Catalog',
+            },
+            {
+                id: 2, url : '/design/2.png', alt: 'Cosplay Catalog',
+                
+            },
+            {
+                id: 3, url : '/design/3.png', alt: 'Cosplay Catalog',
+                
+            },
+            {
+                id: 4, url : '/design/4.png', alt: 'Cosplay Catalog',
+                
+            },
+            {
+                id:5, url : '/design/5.png', alt: 'Cosplay Catalog',
+                
+            },
+            {
+                id: 6, url : '/design/6.png', alt: 'Cosplay Catalog',
+                
+            },
+            {
+                id: 7, url : '/design/7.png', alt: 'Cosplay Catalog',
+                
+            },
+            {
+                id: 8, url : '/design/8.png', alt: 'Cosplay Catalog',
+            },
+            {
+                id: 9, url : '/design/9.png', alt: 'Cosplay Catalog',
+            }
+            
+            ,
+            {
+                id: 11, url : '/design/11.png', alt: 'Cosplay Catalog',
+            }
+            ,
+            {
+                id: 12, url : '/design/12.png', alt: 'Cosplay Catalog',
+            }
+            ,
+            {
+                id: 13, url : '/design/13.png', alt: 'Cosplay Catalog',
+            },
+            {
+                id: 14, url : '/design/14.png', alt: 'Cosplay Catalog',
+            },
+            {
+                id: 15, url : '/design/15.png', alt: 'Cosplay Catalog',
+            }
+            ,
+            {
+                id: 16, url : '/design/16.png', alt: 'Cosplay Catalog',
+            }
+        ]
+ 
 
 
 export default function Home() {
@@ -17,10 +77,11 @@ export default function Home() {
     const isHover2 = useHover(hoverRef2)
     const isHover3 = useHover(hoverRef3)
 
-
+    const data = DataDesign
+    console.log(data)
     return (
         <>
-            <GoogleAnalytics trackPageViews  />
+            <GoogleAnalytics trackPageViews />
 
             <section className={'mx-auto container '}>
                 <div className={'w-full justify-center items-center flex text-center my-12 '}>
@@ -71,22 +132,35 @@ export default function Home() {
                 </div>
 
             </section>
+
             <section className={'mx-auto container '}>
-                <div className={'w-full flex-col justify-center items-center flex text-center my-24 '}>
-                    <div className={`absolute top-3/4 opacity-10 bg-pink-500 -z-30  w-[300px] md:w-[500px] lg:w-[800px] h-[300px] blur-[100px] `}> </div>
-                    <div className={'text-center font-extrabold text-2xl md:text-6xl lg:text-9xl -z-5 opacity-20 text-zinc-50 lg:translate-y-12'}>
-                        <h2>Gallery</h2>
+                <div className={'w-full flex-col justify-center items-center flex text-center my-24  gap-4'}>
+                    <div className="flex flex-col gap-6">
+                        <div className={'text-center font-extrabold text-2xl md:text-6xl lg:text-9xl -z-5 opacity-20 text-zinc-50 lg:translate-y-12'}>
+                            <h2>Design</h2>
+                        </div>
+                        <div className={'text-center '}>
+                            <p className="font-display text-white/80">Because of Winter Tech I cannot land a fulltime job as Data Analyst or Front End, kinda hopeless for my career. I have
+                                another skill because I am a communication science graduate. I also open to job fulltime or freelance as photography and Graphic Design.
+                            </p>
+                        </div>
+                        <div className={'text-center '}>
+                            <p className="font-display text-white/80">
+                                Thanks to <Link className="text-lg font-bold text-white/100 underline" href="https://vercel.com/"> Vercel</Link> and <Link className="text-lg font-bold text-white/100 underline" href="https://supabase.com/"> Supabase</Link> for Server and Storage & Database for Auth
+                            </p>
+                        </div>
+                        <div>
+                        <Link href={'/gallery'} className={'p-3 bg-white/80 text-black rounded-md my-5'}>See Gallery</Link>
+                        </div>
                     </div>
-                    <div className={'grid grid-cols-1 md:grid-cols-3'}>
-                        <div className={'transition duration-300 ease-in-out bg-white/5 hover:bg-white/10 brightness-110 backdrop-blur p-4 m-2 hover:scale-110 rounded-xl'}>
-                            <Image priority={false} className={'rounded-md'} src={'/image/ball/ball-1.png'} alt={'ball 1 pics'} width={300} height={300} />
-                        </div>
-                        <div className={'transition duration-300 ease-in-out bg-white/5 hover:bg-white/10 brightness-110 backdrop-blur p-4 m-2 hover:scale-110 rounded-xl'}>
-                            <Image priority={false} className={'rounded-md'} src={'/image/ball/ball-2.png'} alt={'ball 1 pics'} width={300} height={300} />
-                        </div>
-                        <div className={'transition duration-300 ease-in-out bg-white/5 hover:bg-white/10 brightness-110 backdrop-blur p-4 m-2 hover:scale-110 rounded-xl'}>
-                            <Image priority={false} className={'rounded-md'} src={'/image/ball/ball-3.png'} alt={'ball 1 pics'} width={300} height={300} />
-                        </div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                        {data.map(design =>  {
+                            return (
+                                <div key={design.id}>
+                                    <Image className="rounded-md shadow-md shadow-neutral-200" width={300} height={300} alt="design" src={design.url} />
+                                </div>    
+                            )
+                        } ) } 
                     </div>
                 </div>
             </section>
